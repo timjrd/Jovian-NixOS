@@ -144,10 +144,7 @@ let
     echo "1x1" > "$RADV_FORCE_VRS_CONFIG_FILE"
 
     # Prepare gamescope mode save file (3.1.44+)
-    gamescope_config_dir="''${XDG_CONFIG_HOME:-$HOME/.config}/gamescope"
-    mkdir -p "$gamescope_config_dir"
-    export GAMESCOPE_MODE_SAVE_FILE="$gamescope_config_dir/modes.cfg"
-    touch "$GAMESCOPE_MODE_SAVE_FILE"
+    export GAMESCOPE_MODE_SAVE_FILE=$(mktemp --tmpdir gamescope-mode.XXXXXXXX)
 
     gamescope_incantation=(
       "${gamescope-shim}"
