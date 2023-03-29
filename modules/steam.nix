@@ -108,6 +108,9 @@ let
     # TODO[Jovian]: Explore other ways to stop the session?
     #               -> `systemctl --user stop steam-session.slice`?
 
+    export XKB_DEFAULT_LAYOUT=fr
+    export XKB_DEFAULT_VARIANT=oss
+
     exec ${config.security.wrapperDir}/gamescope "$@"
   '';
 
