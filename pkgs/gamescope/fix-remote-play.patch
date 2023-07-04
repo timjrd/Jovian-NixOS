@@ -1,0 +1,11 @@
+--- a/src/rendervulkan.cpp
++++ b/src/rendervulkan.cpp
+@@ -107,7 +107,7 @@ struct VulkanOutput_t
+ 
+ 	VkFormat outputFormat = VK_FORMAT_UNDEFINED;
+ 
+-	std::array<std::shared_ptr<CVulkanTexture>, 8> pScreenshotImages;
++	std::array<std::shared_ptr<CVulkanTexture>, 64> pScreenshotImages;
+ 
+ 	// NIS and FSR
+ 	std::shared_ptr<CVulkanTexture> tmpOutput;

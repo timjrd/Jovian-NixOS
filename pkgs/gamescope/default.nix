@@ -27,6 +27,9 @@ gamescope'.overrideAttrs({ buildInputs, ... }: {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/770f6182ac3084eb9ed836e1f34fce0595c905db/pkgs/applications/window-managers/gamescope/use-pkgconfig.patch";
       sha256 = "sha256-BqP20qoVH47xT/Pn4P9V5wUvHK/AJivam0Xenr8AbGk=";
     })
+
+    # https://github.com/ValveSoftware/gamescope/issues/775#issuecomment-1566964408
+    ./fix-remote-play.patch
   ];
 
   buildInputs = buildInputs ++ [
